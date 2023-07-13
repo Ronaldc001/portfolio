@@ -1,0 +1,15 @@
+"","trips_v2$member_casual","trips_v2$day_of_week","trips_v2$travel_time.Sum","trips_v2$travel_time.Mean"
+"1","casual","Sunday",7.576707e+06,2.616682e+01
+"2","member","Sunday",4.137352e+06,1.361741e+01
+"3","casual","Monday",4.448476e+06,2.281586e+01
+"4","member","Monday",4.329365e+06,1.156434e+01
+"5","casual","Tuesday",4.132150e+06,2.042292e+01
+"6","member","Tuesday",5.127831e+06,1.168593e+01
+"7","casual","Wednesday",4.279913e+06,1.962246e+01
+"8","member","Wednesday",5.336984e+06,1.168224e+01
+"9","casual","Thursday",4.715593e+06,2.017245e+01
+"10","member","Thursday",5.207395e+06,1.177837e+01
+"11","casual","Friday",5.629751e+06,2.180595e+01
+"12","member","Friday",4.651289e+06,1.201685e+01
+"13","casual","Saturday",8.928818e+06,2.544055e+01
+"14","member","Saturday",4.702876e+06,1.368233e+01

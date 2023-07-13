@@ -1,0 +1,400 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Caso de estudio 1 Ciclystic},
+  pdfauthor={Ronal Castellanos},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Caso de estudio 1 Ciclystic}
+\author{Ronal Castellanos}
+\date{2023-07-12}
+
+\begin{document}
+\maketitle
+
+\hypertarget{about-the-company.}{%
+\section{About the company.}\label{about-the-company.}}
+
+In 2016, Cyclistic launched a successful bike share offering. Since
+then, the program grew to a fleet of 5,824 geo-tagged and locked bikes
+at a network of 692 stations across Chicago. Bikes can be unlocked from
+one station and returned to any other station in the system at any time.
+
+Until now, Cyclistic's marketing strategy was based on building overall
+brand recognition and appealing to broad consumer segments. One of the
+approaches that helped make this possible was the flexibility of its
+pricing plans: single-ride passes, full-day passes, and annual
+memberships. Customers who purchase single-ride passes or full-day
+passes are referred to as occasional riders. Customers who purchase
+annual memberships are called Cyclistic members.
+
+Cyclistic's financial analysts concluded that annual memberships are
+much more profitable than occasional riders. While flexible pricing
+helps Cyclistic attract more customers, Moreno believes that maximizing
+the number of annual members will be key to future growth. Rather than
+creating a marketing campaign that targets all new customers, Moreno
+believes there is plenty of opportunity to convert casual cyclists into
+members. She points out that casual cyclists already know about
+Cyclistic's program and have chosen Cyclistic for their mobility needs.
+
+Moreno set a clear goal: Design marketing strategies aimed at converting
+casual cyclists into annual members. However, to do that, the marketing
+analyst team needs to better understand how annual members and casual
+cyclists differ, why casual cyclists would buy a membership, and how
+digital media might affect their marketing tactics. Moreno and his team
+are interested in analyzing Cyclistic's historical bike trip data to
+identify trends.
+
+Translated with www.DeepL.com/Translator (free version)
+
+\hypertarget{data-source}{%
+\subsection{Data Source}\label{data-source}}
+
+This data was obtained from from
+\url{https://divvy-tripdata.s3.amazonaws.com/index.html} Data obtained
+for June 2022 to June 2023
+
+\hypertarget{step-1-prepare-the-files}{%
+\subsubsection{Step 1: Prepare the
+files}\label{step-1-prepare-the-files}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  First row removed from each .csv file, just one keep first header row
+\item
+  all files merged by cmd comand copy *.csv, ciclystic.csv
+\end{enumerate}
+
+\hypertarget{step-2-load-packages}{%
+\subsubsection{Step 2: Load packages}\label{step-2-load-packages}}
+
+Packages intalled:
+
+install.packages(``tidyverse'') install.packages(``skirm'')
+install.packages(``skimr'') install.packages(``janitor'')
+
+\hypertarget{step-2.1-loading-packages}{%
+\paragraph{Step 2.1: Loading packages}\label{step-2.1-loading-packages}}
+
+\hypertarget{step-3-import-and-clean-data}{%
+\subsubsection{Step 3: Import and Clean
+data}\label{step-3-import-and-clean-data}}
+
+Data loadd from .csv file merged.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rides}\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"ciclystic.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{filter-null-values}{%
+\paragraph{3.1 Filter null values}\label{filter-null-values}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cleaned\_rides }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(rides)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{convert-datetime-to-same-format}{%
+\paragraph{3.2 Convert datetime to same
+format}\label{convert-datetime-to-same-format}}
+
+There is two types of dateformat in the file YYYY-mm-dd HH:MM:SS y
+MM/DD/YYY HH:MM They were matched to datetimestamp format
+
+\hypertarget{analysis}{%
+\subsubsection{4.Analysis}\label{analysis}}
+
+Spliting date into day, month and year.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trips}\OtherTok{\textless{}{-}}\FunctionTok{mutate}\NormalTok{(trips,}\AttributeTok{travel\_time=}\FunctionTok{as.double}\NormalTok{(}\FunctionTok{difftime}\NormalTok{(ended\_at,started\_at)}\SpecialCharTok{/}\DecValTok{60}\NormalTok{))}
+
+\NormalTok{trips}\SpecialCharTok{$}\NormalTok{day}\OtherTok{\textless{}{-}} \FunctionTok{format}\NormalTok{(}\FunctionTok{as.Date}\NormalTok{(trips}\SpecialCharTok{$}\NormalTok{started\_at), }\StringTok{"\%d"}\NormalTok{)}
+\NormalTok{trips}\SpecialCharTok{$}\NormalTok{month}\OtherTok{\textless{}{-}} \FunctionTok{format}\NormalTok{(}\FunctionTok{as.Date}\NormalTok{(trips}\SpecialCharTok{$}\NormalTok{started\_at), }\StringTok{"\%m"}\NormalTok{)}
+\NormalTok{trips}\SpecialCharTok{$}\NormalTok{year}\OtherTok{\textless{}{-}} \FunctionTok{format}\NormalTok{(}\FunctionTok{as.Date}\NormalTok{(trips}\SpecialCharTok{$}\NormalTok{started\_at), }\StringTok{"\%Y"}\NormalTok{)}
+\NormalTok{trips}\SpecialCharTok{$}\NormalTok{day\_of\_week }\OtherTok{\textless{}{-}} \FunctionTok{format}\NormalTok{(}\FunctionTok{as.Date}\NormalTok{(trips}\SpecialCharTok{$}\NormalTok{started\_at), }\StringTok{"\%A"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{removing-trips-when-performed-quality-checks}{%
+\paragraph{4.1 Removing trips when performed quality
+checks}\label{removing-trips-when-performed-quality-checks}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trips\_v2 }\OtherTok{\textless{}{-}}\NormalTok{ trips[}\SpecialCharTok{!}\NormalTok{(trips}\SpecialCharTok{$}\NormalTok{start\_station\_name }\SpecialCharTok{==} \StringTok{"HQ QR"} \SpecialCharTok{|}\NormalTok{ trips}\SpecialCharTok{$}\NormalTok{travel\_time}\SpecialCharTok{\textless{}}\DecValTok{0}\NormalTok{),]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{descriptive-analisys}{%
+\paragraph{4.2 Descriptive analisys}\label{descriptive-analisys}}
+
+Summarizing data, calculating mean, median, max and min values for the
+cleaned and filtered dataset.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(trips\_v2}\SpecialCharTok{$}\NormalTok{travel\_time }\SpecialCharTok{\textasciitilde{}}\NormalTok{ trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual, }\AttributeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   trips_v2$member_casual trips_v2$travel_time
+## 1                 casual             22.71981
+## 2                 member             12.19373
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(trips\_v2}\SpecialCharTok{$}\NormalTok{travel\_time }\SpecialCharTok{\textasciitilde{}}\NormalTok{ trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual, }\AttributeTok{FUN =}\NormalTok{ median)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   trips_v2$member_casual trips_v2$travel_time
+## 1                 casual                   13
+## 2                 member                    9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(trips\_v2}\SpecialCharTok{$}\NormalTok{travel\_time }\SpecialCharTok{\textasciitilde{}}\NormalTok{ trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual, }\AttributeTok{FUN =}\NormalTok{ max)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   trips_v2$member_casual trips_v2$travel_time
+## 1                 casual                32035
+## 2                 member                 1498
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(trips\_v2}\SpecialCharTok{$}\NormalTok{travel\_time }\SpecialCharTok{\textasciitilde{}}\NormalTok{ trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual, }\AttributeTok{FUN =}\NormalTok{ min)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   trips_v2$member_casual trips_v2$travel_time
+## 1                 casual                    0
+## 2                 member                    0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trips\_v2}\SpecialCharTok{$}\NormalTok{day\_of\_week }\OtherTok{\textless{}{-}} \FunctionTok{ordered}\NormalTok{(trips\_v2}\SpecialCharTok{$}\NormalTok{day\_of\_week, }\AttributeTok{levels=}\FunctionTok{c}\NormalTok{(}\StringTok{"Sunday"}\NormalTok{, }\StringTok{"Monday"}\NormalTok{, }\StringTok{"Tuesday"}\NormalTok{, }\StringTok{"Wednesday"}\NormalTok{, }\StringTok{"Thursday"}\NormalTok{, }\StringTok{"Friday"}\NormalTok{, }\StringTok{"Saturday"}\NormalTok{))}
+
+\FunctionTok{aggregate}\NormalTok{(trips\_v2}\SpecialCharTok{$}\NormalTok{travel\_time }\SpecialCharTok{\textasciitilde{}}\NormalTok{ trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual }\SpecialCharTok{+}\NormalTok{ trips\_v2}\SpecialCharTok{$}\NormalTok{day\_of\_week, }\AttributeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    trips_v2$member_casual trips_v2$day_of_week trips_v2$travel_time
+## 1                  casual               Sunday             26.16682
+## 2                  member               Sunday             13.61741
+## 3                  casual               Monday             22.81586
+## 4                  member               Monday             11.56434
+## 5                  casual              Tuesday             20.42292
+## 6                  member              Tuesday             11.68593
+## 7                  casual            Wednesday             19.62246
+## 8                  member            Wednesday             11.68224
+## 9                  casual             Thursday             20.17245
+## 10                 member             Thursday             11.77837
+## 11                 casual               Friday             21.80595
+## 12                 member               Friday             12.01685
+## 13                 casual             Saturday             25.44055
+## 14                 member             Saturday             13.68233
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trips\_v2 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{weekday =} \FunctionTok{wday}\NormalTok{(started\_at, }\AttributeTok{label =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}  \CommentTok{\#creates weekday field using wday()}
+  \FunctionTok{group\_by}\NormalTok{(member\_casual, weekday) }\SpecialCharTok{\%\textgreater{}\%}                  \CommentTok{\#groups by usertype and weekday}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{number\_of\_rides =} \FunctionTok{n}\NormalTok{()                                     }\CommentTok{\#calculates the number of rides and average duration }
+\NormalTok{  ,}\AttributeTok{average\_duration =} \FunctionTok{mean}\NormalTok{(travel\_time)) }\SpecialCharTok{\%\textgreater{}\%}                \CommentTok{\# calculates the average duration}
+  \FunctionTok{arrange}\NormalTok{(member\_casual, weekday)           }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 14 x 4
+## # Groups:   member_casual [2]
+##    member_casual weekday number_of_rides average_duration
+##    <chr>         <ord>             <int>            <dbl>
+##  1 casual        Sun              289554             26.2
+##  2 casual        Mon              194973             22.8
+##  3 casual        Tue              202329             20.4
+##  4 casual        Wed              218113             19.6
+##  5 casual        Thu              233764             20.2
+##  6 casual        Fri              258175             21.8
+##  7 casual        Sat              350968             25.4
+##  8 member        Sun              303828             13.6
+##  9 member        Mon              374372             11.6
+## 10 member        Tue              438804             11.7
+## 11 member        Wed              456846             11.7
+## 12 member        Thu              442115             11.8
+## 13 member        Fri              387064             12.0
+## 14 member        Sat              343719             13.7
+\end{verbatim}
+
+\hypertarget{vizualizations}{%
+\subsubsection{5. Vizualizations}\label{vizualizations}}
+
+Graphs of average trip length for casual users and members per day.
+Graphs of numbers of trips per day for casual users and members.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Let\textquotesingle{}s create a visualization for average duration}
+\NormalTok{trips\_v2 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{weekday =} \FunctionTok{wday}\NormalTok{(started\_at, }\AttributeTok{label =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(member\_casual, weekday) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{number\_of\_rides =} \FunctionTok{n}\NormalTok{()}
+\NormalTok{            ,}\AttributeTok{average\_duration =} \FunctionTok{mean}\NormalTok{(travel\_time)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(member\_casual, weekday)  }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ weekday, }\AttributeTok{y =}\NormalTok{ average\_duration, }\AttributeTok{fill =}\NormalTok{ member\_casual)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{)}\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Averge trip duration"}\NormalTok{,}\AttributeTok{x=}\StringTok{"Day of the week"}\NormalTok{,}\AttributeTok{y=}\StringTok{"Minutes"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Ciclystics-Process_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{trips\_v2 }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{weekday =} \FunctionTok{wday}\NormalTok{(started\_at, }\AttributeTok{label =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(member\_casual, weekday) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{number\_of\_rides =} \FunctionTok{n}\NormalTok{()}
+\NormalTok{            ,}\AttributeTok{average\_duration =} \FunctionTok{mean}\NormalTok{(travel\_time)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(member\_casual, weekday)  }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ weekday, }\AttributeTok{y =}\NormalTok{ number\_of\_rides, }\AttributeTok{fill =}\NormalTok{ member\_casual)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{)}\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Total rides per day"}\NormalTok{,}\AttributeTok{x=}\StringTok{"Day of the week"}\NormalTok{,}\AttributeTok{y=}\StringTok{"Number of trips"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Ciclystics-Process_files/figure-latex/unnamed-chunk-6-2.pdf}
+
+\hypertarget{export-data}{%
+\subsubsection{6.Export data}\label{export-data}}
+
+Saving summaized data into .csv file
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{counts }\OtherTok{\textless{}{-}} \FunctionTok{aggregate}\NormalTok{(trips\_v2}\SpecialCharTok{$}\NormalTok{travel\_time }\SpecialCharTok{\textasciitilde{}}\NormalTok{ trips\_v2}\SpecialCharTok{$}\NormalTok{member\_casual }\SpecialCharTok{+}\NormalTok{ trips\_v2}\SpecialCharTok{$}\NormalTok{day\_of\_week, }\AttributeTok{FUN =} \ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{c}\NormalTok{(}\AttributeTok{Sum =} \FunctionTok{sum}\NormalTok{(x), }\AttributeTok{Mean =} \FunctionTok{mean}\NormalTok{(x)))}
+\FunctionTok{write.csv}\NormalTok{(counts, }\AttributeTok{file =} \StringTok{\textquotesingle{}avg\_ride\_length.csv\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}
